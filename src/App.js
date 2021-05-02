@@ -1,11 +1,15 @@
 import React from "react";
-import { GlobalStyle } from "./AppStyled.js";
+import { AppStyled, GlobalStyle } from "./AppStyled.js";
+import Search from "./components/Search/Search.js";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <div>Wikipedia Search</div>
+      <AppStyled>
+        <h1>Wikipedia Search</h1>
+        <Search />
+      </AppStyled>
     </>
   );
 }
