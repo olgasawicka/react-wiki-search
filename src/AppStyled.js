@@ -1,6 +1,14 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+:root{
+  --dark: #000;
+  --light: #fff;
+  --lightgrey: #e7e7e7;
+  --blue: #00b7ff;
+}
+
   * {
     box-sizing: border-box;
     margin: 0;
