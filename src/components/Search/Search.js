@@ -13,14 +13,15 @@ const Search = () => {
   const btnDisabled = !replaceTxt || (data && !data.length);
 
   useEffect(() => {
-    phrase && debounce(fetchData(), 100);
+    // phrase && debounce(fetchData(), 100);
+    phrase && (phrase.length === 1 || phrase.length % 3 === 0) && fetchData();
   }, [phrase]);
 
   const fetchData = async () => {
     setLoading(true);
     setData(null);
     fetch(
-      `https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=10&origin=*&srsearch=${phrase}`
+      `https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=10&origin=*&srsearch="${phrase}"`
     )
       .then((response) => {
         if (!response.ok) {
